@@ -8,7 +8,7 @@ if (-not (Test-Path -Path ".git")) {
 }
 
 git add .
-git commit -m "feat: overhaul mobile-first experience with sticky compact header, bottom tab bar, and responsive touch layout"
+git commit -m "update: update Grocery Shop project with candy-shop link and description"
 git remote remove origin 2>$null
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main

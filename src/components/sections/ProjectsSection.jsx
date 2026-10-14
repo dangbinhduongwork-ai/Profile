@@ -6,6 +6,7 @@ import {
   Activity,
   Heart,
   ArrowRight,
+  ExternalLink,
 } from 'lucide-react';
 import { profile } from '../../data/profile';
 import { useLang } from '../../hooks/useLang';
@@ -89,18 +90,31 @@ export function ProjectsSection() {
                   {project.desc}
                 </p>
 
-                {/* GitHub link: hidden when url is empty */}
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-[12px] text-accent font-semibold hover:underline min-h-[36px] pt-1.5 self-start transition-colors"
-                  >
-                    <span>{t.projects?.viewOnGithub || profile.viewOnGithub}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                ) : null}
+                {/* Links: GitHub & optional Live Demo */}
+                <div className="flex items-center gap-3 pt-1.5 flex-wrap mt-auto">
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[12px] text-accent font-semibold hover:underline min-h-[36px] transition-colors"
+                    >
+                      <span>{t.projects?.viewOnGithub || profile.viewOnGithub}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  ) : null}
+                  {project.demoUrl ? (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[12px] text-muted hover:text-accent font-medium hover:underline min-h-[36px] transition-colors"
+                    >
+                      <span>{t.projects?.liveDemo || 'Demo'}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : null}
+                </div>
               </div>
             </div>
           );

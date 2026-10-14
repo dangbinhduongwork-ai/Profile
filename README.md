@@ -89,6 +89,15 @@ Sau đó đặt `mode: "stars"` là hiệu ứng mới sẽ tự động hoạt 
 
 ---
 
+## Dự án nổi bật
+
+- [Realtime Language Translation](https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation) – Ứng dụng dịch màn hình thời gian thực (Python, RapidOCR, PySide6)
+- [Grocery Shop (Nguyen Huong Store)](https://github.com/dangbinhduongwork-ai/candy-shop) – Nền tảng TMĐT đa nền tảng (Web React + App Flutter + Spring Boot) cho cửa hàng tạp hóa & bánh kẹo ([Demo](https://nguyenhuongshop.vercel.app))
+- [CaloOut (Flutter App)](https://github.com/dangbinhduongwork-ai/CaloOutV2) – Ứng dụng theo dõi calo & sức khỏe (Flutter, Dart, Firebase)
+- [CaloIn](https://github.com/dangbinhduongwork-ai/CaloIn) – Ứng dụng ghi nhật ký calo & dinh dưỡng nạp vào (Flutter, Dart, SQLite)
+
+---
+
 ## Công nghệ sử dụng
 
 - [React 18](https://react.dev/)

@@ -53,6 +53,7 @@ export const translations = {
     projects: {
       title: 'Dự án nổi bật',
       viewOnGithub: 'Xem trên GitHub',
+      liveDemo: 'Xem Demo',
     },
     contact: {
       title: 'Liên hệ',
@@ -130,6 +131,7 @@ export const translations = {
     projects: {
       title: 'Featured Projects',
       viewOnGithub: 'View on GitHub',
+      liveDemo: 'Live Demo',
     },
     contact: {
       title: 'Contact',

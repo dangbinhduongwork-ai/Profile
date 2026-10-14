@@ -33,12 +33,13 @@ export const profile = {
       url: "https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation"
     },
     {
-      title: "Grocery Shop",
+      title: "Grocery Shop (Nguyen Huong)",
       icon: "ShoppingCart",
       gradient: ["#0f3d2a", "#22c55e"],
-      tags: ["React", "Spring Boot", "MySQL"],
-      desc: "Website quản lý và bán hàng tạp hóa với đầy đủ tính năng quản lý sản phẩm, đơn hàng, người dùng.",
-      url: ""
+      tags: ["React", "Spring Boot", "Flutter", "MySQL"],
+      desc: "Nền tảng thương mại điện tử đa nền tảng (Web React + App Flutter + Spring Boot) cho cửa hàng tạp hóa & bánh kẹo, hỗ trợ giỏ hàng, đặt hàng, bảo mật JWT và bộ quản trị 7 phân hệ.",
+      url: "https://github.com/dangbinhduongwork-ai/candy-shop",
+      demoUrl: "https://nguyenhuongshop.vercel.app"
     },
     {
       title: "CaloOut (Flutter App)",
@@ -46,7 +47,7 @@ export const profile = {
       gradient: ["#062b1e", "#10b981"],
       tags: ["Flutter", "Dart", "Firebase"],
       desc: "Ứng dụng theo dõi calo, sức khỏe, đang phát triển và tối ưu UI/UX.",
-      url: ""
+      url: "https://github.com/dangbinhduongwork-ai/CaloOutV2"
     },
     {
       title: "CaloIn",
