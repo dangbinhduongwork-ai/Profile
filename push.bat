@@ -9,7 +9,7 @@ if not exist .git (
 )
 
 git add .
-git commit -m "feat: complete personal portfolio website with React 18, Vite, and Tailwind CSS 3"
+git commit -m "feat: add dynamic seasonal canvas effects with single-file config and visitor switcher"
 git remote remove origin 2>nul
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main

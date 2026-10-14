@@ -9,6 +9,7 @@ import {
   ContactSection,
 } from './components/sections';
 import { useScrollSpy } from './hooks/useScrollSpy';
+import { SeasonEffect } from './components/ui/SeasonEffect';
 
 const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact', 'blog'];
 
@@ -17,7 +18,10 @@ export function App() {
   const [activeId, setActiveId] = useScrollSpy(SECTION_IDS);
 
   return (
-    <div className="min-h-screen bg-bg text-text transition-colors duration-200 font-sans flex flex-col">
+    <div className="min-h-screen bg-bg text-text transition-colors duration-200 font-sans flex flex-col relative">
+      {/* Dynamic Canvas Seasonal Effect */}
+      <SeasonEffect />
+
       {/* 1. Sticky Header */}
       <Header activeId={activeId} onSelect={setActiveId} />
 

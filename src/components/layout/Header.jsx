@@ -3,6 +3,8 @@ import { Home, User, Layers, Folder, FileText, Mail } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { profile } from '../../data/profile';
 
+import { useSeason } from '../../hooks/useSeason';
+
 const NAV_ICONS = {
   Home,
   User,
@@ -13,6 +15,8 @@ const NAV_ICONS = {
 };
 
 export function Header({ activeId = 'home', onSelect }) {
+  const { visitorChoice, setSeasonChoice, allowVisitorSwitch } = useSeason();
+
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between gap-4 px-4 sm:px-6 py-3 bg-bg/85 backdrop-blur-[10px] border-b border-border transition-colors duration-200">
       {/* Left: Logo & Name */}
@@ -52,8 +56,24 @@ export function Header({ activeId = 'home', onSelect }) {
         })}
       </nav>
 
-      {/* Right: Theme Switcher */}
-      <div className="flex-none pl-1">
+      {/* Right: Season Selector & Theme Switcher */}
+      <div className="flex items-center gap-2 sm:gap-2.5 flex-none pl-1">
+        {allowVisitorSwitch ? (
+          <select
+            value={visitorChoice}
+            onChange={(e) => setSeasonChoice(e.target.value)}
+            aria-label="Hiệu ứng theo mùa"
+            className="text-xs bg-surface2 text-muted hover:text-accent border border-border rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer transition-colors"
+          >
+            <option value="auto">Tự động</option>
+            <option value="spring">Xuân</option>
+            <option value="summer">Hạ</option>
+            <option value="autumn">Thu</option>
+            <option value="winter">Đông</option>
+            <option value="none">Tắt</option>
+          </select>
+        ) : null}
+
         <ThemeToggle />
       </div>
     </header>
