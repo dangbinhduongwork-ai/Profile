@@ -1,7 +1,7 @@
 export const profile = {
   name: "Đặng Bình Dương",
   greeting: "Xin chào, tôi là",
-  role: "Sinh viên năm 3 | Công nghệ Thông tin",
+  role: "Sinh viên năm 4 | Công nghệ Thông tin",
   heroText: "Đam mê công nghệ, thích xây dựng những sản phẩm hữu ích và không ngừng học hỏi để trở thành một lập trình viên giỏi, tạo ra giá trị thực tế.",
   tagline: ["Better", "Code", "Bigger", "Dreams"],
   quote: "Không có gì là không thể, chỉ có những thứ chưa làm được.",
