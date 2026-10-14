@@ -1,9 +1,9 @@
 import React from 'react';
-import { Home, User, Layers, Folder, FileText, Mail } from 'lucide-react';
+import { Home, User, Layers, Folder, FileText, Mail, Globe } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { profile } from '../../data/profile';
-
 import { useSeason } from '../../hooks/useSeason';
+import { useLang } from '../../hooks/useLang';
 
 const NAV_ICONS = {
   Home,
@@ -16,26 +16,28 @@ const NAV_ICONS = {
 
 export function Header({ activeId = 'home', onSelect }) {
   const { visitorChoice, setSeasonChoice, allowVisitorSwitch } = useSeason();
+  const { lang, toggleLang, t } = useLang();
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between gap-4 px-4 sm:px-6 py-3 bg-bg/85 backdrop-blur-[10px] border-b border-border transition-colors duration-200">
+    <header className="sticky top-0 z-50 h-14 max-h-14 flex items-center justify-between gap-2.5 px-3.5 sm:px-6 bg-bg/85 backdrop-blur-[10px] border-b border-border transition-colors duration-200">
       {/* Left: Logo & Name */}
       <a
         href="#home"
         onClick={() => onSelect?.('home')}
-        className="flex items-center gap-2.5 font-semibold whitespace-nowrap flex-none group"
+        className="flex items-center gap-2 font-semibold whitespace-nowrap flex-none group min-h-[44px]"
       >
         <b className="text-[22px] font-extrabold bg-gradient-to-br from-accent to-accent2 bg-clip-text text-transparent transition-opacity group-hover:opacity-90">
           DB
         </b>
-        <span className="hidden min-[900px]:inline text-base font-semibold text-text">
+        {/* Name: only shown when >= 561px on mobile, always on desktop */}
+        <span className="hidden min-[561px]:inline text-sm sm:text-base font-semibold text-text truncate max-w-[160px] sm:max-w-none">
           {profile.name}
         </span>
       </a>
 
-      {/* Center: Top Navigation Menu */}
-      <nav className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto scrollbar-none py-1 px-1">
-        {profile.nav.map((item) => {
+      {/* Center: Top Navigation Menu (ONLY visible on Desktop >= 900px) */}
+      <nav className="hidden min-[900px]:flex items-center gap-1 sm:gap-1.5 overflow-x-auto scrollbar-none py-1 px-1">
+        {t.nav.map((item) => {
           const Icon = NAV_ICONS[item.icon] || Home;
           const isActive = activeId === item.id;
           return (
@@ -56,24 +58,42 @@ export function Header({ activeId = 'home', onSelect }) {
         })}
       </nav>
 
-      {/* Right: Season Selector & Theme Switcher */}
-      <div className="flex items-center gap-2 sm:gap-2.5 flex-none pl-1">
+      {/* Right Controls: Language (EN/VI) -> Season Select (max 92px) -> Theme Switch */}
+      <div className="flex items-center gap-1.5 sm:gap-2 flex-none">
+        {/* 1. Language Toggle Button (44px touch target) */}
+        <button
+          type="button"
+          onClick={toggleLang}
+          aria-label={lang === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+          title={lang === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-xs font-bold text-muted hover:text-accent border border-border bg-surface2 rounded-xl px-2.5 py-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-accent"
+        >
+          <span className="flex items-center gap-1 tracking-wider uppercase">
+            <Globe className="w-3.5 h-3.5 text-accent" />
+            <span>{t.nextLangCode}</span>
+          </span>
+        </button>
+
+        {/* 2. Season Selector Dropdown (max-w ~92px) */}
         {allowVisitorSwitch ? (
-          <select
-            value={visitorChoice}
-            onChange={(e) => setSeasonChoice(e.target.value)}
-            aria-label="Hiệu ứng theo mùa"
-            className="text-xs bg-surface2 text-muted hover:text-accent border border-border rounded-lg px-2 py-1 focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer transition-colors"
-          >
-            <option value="auto">Tự động</option>
-            <option value="spring">Xuân</option>
-            <option value="summer">Hạ</option>
-            <option value="autumn">Thu</option>
-            <option value="winter">Đông</option>
-            <option value="none">Tắt</option>
-          </select>
+          <div className="relative max-w-[86px] sm:max-w-[92px] w-full">
+            <select
+              value={visitorChoice}
+              onChange={(e) => setSeasonChoice(e.target.value)}
+              aria-label={t.seasons.ariaLabel}
+              className="w-full h-9 text-xs bg-surface2 text-muted hover:text-accent border border-border rounded-xl px-2 py-1 focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer truncate transition-colors appearance-none text-center"
+            >
+              <option value="auto">{t.seasons.auto}</option>
+              <option value="spring">{t.seasons.spring}</option>
+              <option value="summer">{t.seasons.summer}</option>
+              <option value="autumn">{t.seasons.autumn}</option>
+              <option value="winter">{t.seasons.winter}</option>
+              <option value="none">{t.seasons.none}</option>
+            </select>
+          </div>
         ) : null}
 
+        {/* 3. Dark/Light Theme Switch */}
         <ThemeToggle />
       </div>
     </header>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Sidebar, Footer } from './components/layout';
+import { Header, Sidebar, Footer, BottomTabBar } from './components/layout';
 import {
   HeroSection,
   AboutSection,
@@ -14,18 +14,18 @@ import { SeasonEffect } from './components/ui/SeasonEffect';
 const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact', 'blog'];
 
 export function App() {
-  // Track active section for both Header and Sidebar
+  // Track active section for Header, Sidebar, and Bottom Tab Bar
   const [activeId, setActiveId] = useScrollSpy(SECTION_IDS);
 
   return (
-    <div className="min-h-screen bg-bg text-text transition-colors duration-200 font-sans flex flex-col relative">
+    <div className="min-h-screen bg-bg text-text transition-colors duration-200 font-sans flex flex-col relative overflow-x-clip max-w-[100vw]">
       {/* Dynamic Canvas Seasonal Effect */}
       <SeasonEffect />
 
-      {/* 1. Sticky Header */}
+      {/* 1. Sticky Header (<= 56px, mobile-first controls) */}
       <Header activeId={activeId} onSelect={setActiveId} />
 
-      {/* 2. Main 2-column layout (220px Sidebar + Main Content) */}
+      {/* 2. Main 2-column layout (220px Sidebar on Desktop + Main Content) */}
       <div className="flex-1 grid grid-cols-1 min-[900px]:grid-cols-[220px_minmax(0,1fr)]">
         {/* Left Sticky Sidebar (hidden under 900px) */}
         <Sidebar activeId={activeId} onSelect={setActiveId} />
@@ -35,16 +35,16 @@ export function App() {
           {/* Section 1: Hero (#home) */}
           <HeroSection />
 
-          {/* Container for sections */}
-          <div className="px-4 sm:px-6 md:px-10 pt-6 pb-2 space-y-5 flex-1">
+          {/* Container for cards: 14px margins & gap on mobile (< 900px), standard on desktop */}
+          <div className="px-3.5 sm:px-6 md:px-10 pt-3.5 sm:pt-6 pb-2 space-y-3.5 sm:space-y-5 flex-1">
             {/* Row 1: About (#about) & Skills (#skills) */}
-            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[1fr_1.5fr] gap-5">
+            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[1fr_1.5fr] gap-3.5 sm:gap-5">
               <AboutSection />
               <SkillsSection />
             </div>
 
             {/* Row 2: Projects (#projects) & Contact (#contact) - 2.6fr / 1fr */}
-            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[2.6fr_1fr] gap-5">
+            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[2.6fr_1fr] gap-3.5 sm:gap-5">
               <ProjectsSection />
               <ContactSection />
             </div>
@@ -53,10 +53,13 @@ export function App() {
             <BlogSection />
           </div>
 
-          {/* Footer (includes mobile social links) */}
+          {/* Footer (includes mobile social links and tab bar safe area padding) */}
           <Footer />
         </main>
       </div>
+
+      {/* 3. Bottom Tab Bar (Visible only on Mobile < 900px, 5 items, fixed at bottom) */}
+      <BottomTabBar activeId={activeId} onSelect={setActiveId} />
     </div>
   );
 }

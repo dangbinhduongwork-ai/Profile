@@ -5,13 +5,13 @@ import { profile } from '../../data/profile';
 
 /**
  * SocialLinks component:
- * 5 square buttons (38x38px, rounded 10px, border, icon 19px muted, hover accent + translateY(-2px)).
+ * 5 social icon buttons (44px on mobile for optimal touch ergonomics, 38px on desktop sidebar).
  * Used in:
- * 1. Sidebar
- * 2. Contact section
- * 3. Mobile footer
+ * 1. Sidebar (desktop)
+ * 2. Contact section (mobile & desktop)
+ * 3. Mobile footer (< 900px)
  */
-export function SocialLinks({ className = '' }) {
+export function SocialLinks({ className = '', centered = false, size = 'auto' }) {
   const socialList = [
     {
       name: 'GitHub',
@@ -45,8 +45,19 @@ export function SocialLinks({ className = '' }) {
     },
   ];
 
+  const sizeClasses =
+    size === '44'
+      ? 'w-11 h-11 min-w-[44px] min-h-[44px]'
+      : size === '38'
+      ? 'w-[38px] h-[38px]'
+      : 'w-11 h-11 min-w-[44px] min-h-[44px] min-[900px]:w-[38px] min-[900px]:h-[38px] min-[900px]:min-w-0 min-[900px]:min-h-0';
+
   return (
-    <div className={`flex items-center gap-2.5 flex-wrap ${className}`}>
+    <div
+      className={`flex items-center gap-2.5 flex-wrap ${
+        centered ? 'justify-center' : ''
+      } ${className}`}
+    >
       {socialList.map((item) => {
         const IconComponent = item.icon;
         return (
@@ -58,7 +69,7 @@ export function SocialLinks({ className = '' }) {
             {...(item.isExternal
               ? { target: '_blank', rel: 'noopener noreferrer' }
               : {})}
-            className="w-[38px] h-[38px] rounded-[10px] border border-border bg-surface2 flex items-center justify-center text-muted transition-all duration-200 hover:text-accent hover:border-accent hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50"
+            className={`${sizeClasses} rounded-[10px] border border-border bg-surface2 flex items-center justify-center text-muted transition-all duration-200 hover:text-accent hover:border-accent hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent/50`}
           >
             <IconComponent className="w-[19px] h-[19px] flex-none" />
           </a>

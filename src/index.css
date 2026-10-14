@@ -39,16 +39,43 @@ html.dark {
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 76px;
+    scroll-padding-top: calc(58px + env(safe-area-inset-top, 0px));
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  @media (min-width: 900px) {
+    html {
+      scroll-padding-top: 76px;
+    }
   }
 
   body {
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Be Vietnam Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
     min-height: 100vh;
     margin: 0;
+    overflow-x: clip;
+    max-width: 100vw;
     transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Touch enhancements & eliminate 300ms tap delay / gray highlight */
+  button, a, select, input, [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent iOS Safari auto-zoom when tapping selects or inputs */
+  select, input, textarea {
+    font-size: 16px;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 }
 
@@ -60,5 +87,15 @@ html.dark {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-}
 
+  /* Safe area inset utilities */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pb-tab-bar {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  }
+}

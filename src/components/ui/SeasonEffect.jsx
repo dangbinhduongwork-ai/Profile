@@ -63,9 +63,9 @@ export function SeasonEffect() {
         ? effectConfig.lightThemeColors
         : effectConfig.colors;
 
-    // Determine particle count (reduced on small mobile screens)
-    const isMobile = width < 768;
-    const countMultiplier = (isMobile ? 0.6 : 1) * (config.intensity || 1);
+    // Determine particle count (reduced 50% on small screens < 600px for high performance)
+    const isSmallScreen = width < 600;
+    const countMultiplier = (isSmallScreen ? 0.5 : 1) * (config.intensity || 1);
     const particleCount = Math.max(
       6,
       Math.round((effectConfig.count || 30) * countMultiplier)
@@ -135,32 +135,40 @@ export function SeasonEffect() {
 
       switch (shape) {
         case 'glow': {
-          // Summer glow / firefly effect with pulsating radiant aura
-          const pulse = Math.sin(p.glowPhase) * 0.35 + 0.65;
-          const auraRadius = p.size * 2.8 * pulse;
+          // Summer glow / firefly effect
+          if (isSmallScreen) {
+            // Mobile optimization: lightweight rendering without expensive shadow/gradient computations
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * 1.5, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            // Desktop radiant glow aura
+            const pulse = Math.sin(p.glowPhase) * 0.35 + 0.65;
+            const auraRadius = p.size * 2.8 * pulse;
 
-          const grad = ctx.createRadialGradient(
-            p.x,
-            p.y,
-            0,
-            p.x,
-            p.y,
-            auraRadius
-          );
-          grad.addColorStop(0, p.color);
-          grad.addColorStop(0.35, p.color);
-          grad.addColorStop(1, 'transparent');
+            const grad = ctx.createRadialGradient(
+              p.x,
+              p.y,
+              0,
+              p.x,
+              p.y,
+              auraRadius
+            );
+            grad.addColorStop(0, p.color);
+            grad.addColorStop(0.35, p.color);
+            grad.addColorStop(1, 'transparent');
 
-          ctx.fillStyle = grad;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, auraRadius, 0, Math.PI * 2);
-          ctx.fill();
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, auraRadius, 0, Math.PI * 2);
+            ctx.fill();
 
-          // Small solid core
-          ctx.fillStyle = '#ffffff';
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
-          ctx.fill();
+            // Small solid core
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
+            ctx.fill();
+          }
           break;
         }
 

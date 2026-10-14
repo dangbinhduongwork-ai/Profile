@@ -2,6 +2,7 @@ import React from 'react';
 import { Home, User, Layers, Folder, FileText, Mail } from 'lucide-react';
 import { SocialLinks } from '../ui/SocialLinks';
 import { profile } from '../../data/profile';
+import { useLang } from '../../hooks/useLang';
 
 const NAV_ICONS = {
   Home,
@@ -13,11 +14,13 @@ const NAV_ICONS = {
 };
 
 export function Sidebar({ activeId = 'home', onSelect }) {
+  const { t } = useLang();
+
   return (
-    <aside className="hidden min-[900px]:flex flex-col justify-between w-[220px] flex-none sticky top-[61px] h-[calc(100vh-61px)] p-5 border-r border-border bg-bg/50 overflow-y-auto scrollbar-none transition-colors duration-200">
+    <aside className="hidden min-[900px]:flex flex-col justify-between w-[220px] flex-none sticky top-[57px] h-[calc(100vh-57px)] p-5 border-r border-border bg-bg/50 overflow-y-auto scrollbar-none transition-colors duration-200">
       {/* Vertical Navigation Menu */}
       <nav className="flex flex-col gap-1">
-        {profile.nav.map((item) => {
+        {t.nav.map((item) => {
           const Icon = NAV_ICONS[item.icon] || Home;
           const isActive = activeId === item.id;
           return (
