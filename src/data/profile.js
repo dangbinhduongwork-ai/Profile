@@ -14,7 +14,7 @@ export const profile = {
   zaloLink: "https://zalo.me/0865087784",
   mapLink: encodeURI("https://www.google.com/maps/search/?api=1&query=Thôn 8 xã Suối 2 Ba Vì Hà Nội"),
   about: [
-    "Mình là Đặng Bình Dương, sinh viên năm 3 ngành Công nghệ Thông tin. Mình yêu thích lập trình, đặc biệt là phát triển web, ứng dụng di động và các công nghệ mới như React, Spring Boot, Flutter...",
+    "Mình là Đặng Bình Dương, sinh viên năm 4 ngành Công nghệ Thông tin. Mình yêu thích lập trình, đặc biệt là phát triển web, ứng dụng di động và các công nghệ mới như React, Spring Boot, Flutter...",
     "Mình luôn cố gắng học hỏi, rèn luyện kỹ năng và xây dựng những dự án thực tế để từng bước tiến gần hơn đến mục tiêu trở thành một lập trình viên chuyên nghiệp và tự do tài chính."
   ],
   skills: {
