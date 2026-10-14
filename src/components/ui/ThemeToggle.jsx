@@ -18,9 +18,9 @@ export function ThemeToggle({ className = '' }) {
         id="theme-toggle"
         type="button"
         onClick={toggleTheme}
-        aria-label="Đổi giao diện sáng/tối"
+        aria-label="Toggle light/dark theme"
         aria-pressed={isDark}
-        title={isDark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'}
+        title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
         className="relative flex items-center justify-center min-w-[44px] min-h-[44px] p-1 focus:outline-none cursor-pointer"
       >
         <span className="w-11 h-6 rounded-full border border-border bg-surface2 relative block p-0.5 transition-colors">

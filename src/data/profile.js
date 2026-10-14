@@ -1,12 +1,12 @@
 export const profile = {
   name: "Đặng Bình Dương",
-  greeting: "Xin chào, tôi là",
-  role: "Sinh viên năm 4 | Công nghệ Thông tin",
-  heroText: "Đam mê công nghệ, thích xây dựng những sản phẩm hữu ích và không ngừng học hỏi để trở thành một lập trình viên giỏi, tạo ra giá trị thực tế.",
+  greeting: "Hello, I'm",
+  role: "4th-year Student | Information Technology",
+  heroText: "Passionate about technology, building practical products, and continuously learning to become an outstanding developer creating real-world value.",
   tagline: ["Better", "Code", "Bigger", "Dreams"],
-  quote: "Không có gì là không thể, chỉ có những thứ chưa làm được.",
-  location: "Ba Vì, Hà Nội",
-  address: "Thôn 8, xã Suối 2, Ba Vì, Hà Nội",
+  quote: "Nothing is impossible, only things yet to be done.",
+  location: "Ba Vi, Hanoi, Vietnam",
+  address: "Village 8, Suoi 2, Ba Vi, Hanoi, Vietnam",
   email: "dangbinhduong.work@gmail.com",
   zalo: "0865087784",
   github: "https://github.com/dangbinhduongwork-ai",
@@ -14,14 +14,14 @@ export const profile = {
   zaloLink: "https://zalo.me/0865087784",
   mapLink: encodeURI("https://www.google.com/maps/search/?api=1&query=Thôn 8 xã Suối 2 Ba Vì Hà Nội"),
   about: [
-    "Mình là Đặng Bình Dương, sinh viên năm 4 ngành Công nghệ Thông tin. Mình yêu thích lập trình, đặc biệt là phát triển web, ứng dụng di động và các công nghệ mới như React, Spring Boot, Flutter...",
-    "Mình luôn cố gắng học hỏi, rèn luyện kỹ năng và xây dựng những dự án thực tế để từng bước tiến gần hơn đến mục tiêu trở thành một lập trình viên chuyên nghiệp và tự do tài chính."
+    "I'm Dang Binh Duong, a 4th-year Information Technology student. I love programming, especially modern web development, mobile applications, and backend systems like React, Spring Boot, and Flutter.",
+    "I continuously strive to learn, sharpen my engineering skills, and build practical projects to step-by-step progress toward becoming a professional software engineer and achieving financial independence."
   ],
   skills: {
-    "Ngôn ngữ & Framework": ["Java", "Spring Boot", "C#", ".NET", "React", "Flutter", "Dart"],
-    "Công cụ & Môi trường": ["Git", "GitHub", "VS Code", "Docker", "Firebase", "MySQL", "SQL Server"],
-    "Kiến thức nền tảng": ["Cấu trúc dữ liệu & Giải thuật", "Hệ điều hành", "Mạng máy tính", "Cơ sở dữ liệu", "Kiểm thử phần mềm", "Bảo mật"],
-    "Kỹ năng mềm": ["Làm việc nhóm", "Giải quyết vấn đề", "Tư duy logic", "Tiếng Anh (TOEIC - đang học)"]
+    "Languages & Frameworks": ["Java", "Spring Boot", "C#", ".NET", "React", "Flutter", "Dart"],
+    "Tools & Environments": ["Git", "GitHub", "VS Code", "Docker", "Firebase", "MySQL", "SQL Server"],
+    "Core Foundations": ["Data Structures & Algorithms", "Operating Systems", "Computer Networks", "Databases", "Software Testing", "Security"],
+    "Soft Skills": ["Teamwork", "Problem Solving", "Logical Thinking", "English (TOEIC in progress)"]
   },
   projects: [
     {
@@ -29,7 +29,7 @@ export const profile = {
       icon: "Globe",
       gradient: ["#0b1e3f", "#1e5fd8"],
       tags: ["Python", "RapidOCR", "PySide6"],
-      desc: "Ứng dụng Windows đọc chữ tiếng Anh trên màn hình bằng OCR, dịch sang tiếng Việt theo thời gian thực và hiển thị bằng lớp phủ trong suốt.",
+      desc: "Windows desktop application for real-time English-to-Vietnamese on-screen OCR translation displayed seamlessly via a transparent overlay.",
       url: "https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation"
     },
     {
@@ -37,7 +37,7 @@ export const profile = {
       icon: "ShoppingCart",
       gradient: ["#0f3d2a", "#22c55e"],
       tags: ["React", "Spring Boot", "Flutter", "MySQL"],
-      desc: "Nền tảng thương mại điện tử đa nền tảng (Web React + App Flutter + Spring Boot) cho cửa hàng tạp hóa & bánh kẹo, hỗ trợ giỏ hàng, đặt hàng, bảo mật JWT và bộ quản trị 7 phân hệ.",
+      desc: "Full-stack e-commerce platform (React Web + Flutter App + Spring Boot) for grocery & confectionery retail with cart, checkout, JWT authentication, and a 7-module admin suite.",
       url: "https://github.com/dangbinhduongwork-ai/candy-shop",
       demoUrl: "https://nguyenhuongshop.vercel.app"
     },
@@ -46,7 +46,7 @@ export const profile = {
       icon: "Activity",
       gradient: ["#062b1e", "#10b981"],
       tags: ["Flutter", "Dart", "Firebase"],
-      desc: "Ứng dụng theo dõi calo, sức khỏe, đang phát triển và tối ưu UI/UX.",
+      desc: "Mobile fitness & health tracking application built with Flutter and Firebase, featuring intuitive calorie monitoring and modern UI/UX.",
       url: "https://github.com/dangbinhduongwork-ai/CaloOutV2"
     },
     {
@@ -54,44 +54,45 @@ export const profile = {
       icon: "Heart",
       gradient: ["#102a56", "#0d9488"],
       tags: ["Flutter", "Dart", "SQLite"],
-      desc: "Ứng dụng Flutter ghi nhật ký calo và macro nạp vào mỗi ngày, hoạt động offline, hỗ trợ quét mã vạch.",
+      desc: "Offline-first Flutter app for daily calorie and macronutrient logging with barcode scanning support and local SQLite storage.",
       url: "https://github.com/dangbinhduongwork-ai/CaloIn"
     }
   ],
   blog: [
-    "Bắt đầu với Flutter cho người mới",
-    "Spring Boot REST API từ A đến Z",
-    "Hành trình học lập trình năm 4"
+    "Getting Started with Flutter for Beginners",
+    "Spring Boot REST API from A to Z",
+    "My Journey as a 4th-Year Software Engineering Student"
   ],
   nav: [
-    { id: "home", label: "Trang chủ", icon: "Home" },
-    { id: "about", label: "Giới thiệu", icon: "User" },
-    { id: "skills", label: "Kỹ năng", icon: "Layers" },
-    { id: "projects", label: "Dự án", icon: "Folder" },
+    { id: "home", label: "Home", icon: "Home" },
+    { id: "about", label: "About", icon: "User" },
+    { id: "skills", label: "Skills", icon: "Layers" },
+    { id: "projects", label: "Projects", icon: "Folder" },
     { id: "blog", label: "Blog", icon: "FileText" },
-    { id: "contact", label: "Liên hệ", icon: "Mail" }
+    { id: "contact", label: "Contact", icon: "Mail" }
   ],
-  viewProjects: "Xem dự án",
-  downloadCv: "Tải CV",
+  viewProjects: "View Projects",
+  downloadCv: "Download CV",
   cvFile: "/cv.pdf",
-  studentYear: "Sinh viên CNTT - Năm 4",
-  learnMore: "Tìm hiểu thêm về tôi",
+  studentYear: "IT Student - 4th Year",
+  learnMore: "More about me",
   sectionTitles: {
-    about: "Giới thiệu",
-    skills: "Kỹ năng",
-    projects: "Dự án nổi bật",
+    about: "About Me",
+    skills: "Skills",
+    projects: "Featured Projects",
     blog: "Blog",
-    contact: "Liên hệ"
+    contact: "Contact"
   },
-  viewOnGithub: "Xem trên GitHub",
-  contactGreeting: "Mình luôn sẵn sàng kết nối, hợp tác và học hỏi những điều mới!",
-  sendMessage: "Gửi tin nhắn",
-  socialTitle: "Mạng xã hội",
-  comingSoon: "Sắp ra mắt",
+  viewOnGithub: "View on GitHub",
+  liveDemo: "Live Demo",
+  contactGreeting: "I'm always open to connect, collaborate, and learn new things!",
+  sendMessage: "Send Message",
+  socialTitle: "Social Media",
+  comingSoon: "Coming Soon",
   emailLabel: "Email",
   zaloLabel: "Zalo",
-  addressLabel: "Địa chỉ",
-  copyright: "© 2026 Đặng Bình Dương."
+  addressLabel: "Address",
+  copyright: "© 2026 Dang Binh Duong. All rights reserved."
 };
 
 export default profile;

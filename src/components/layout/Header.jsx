@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, User, Layers, Folder, FileText, Mail, Globe } from 'lucide-react';
+import { Home, User, Layers, Folder, FileText, Mail } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { profile } from '../../data/profile';
 import { useSeason } from '../../hooks/useSeason';
@@ -16,7 +16,7 @@ const NAV_ICONS = {
 
 export function Header({ activeId = 'home', onSelect }) {
   const { visitorChoice, setSeasonChoice, allowVisitorSwitch } = useSeason();
-  const { lang, toggleLang, t } = useLang();
+  const { t } = useLang();
 
   return (
     <header className="sticky top-0 z-50 h-14 max-h-14 flex items-center justify-between gap-2.5 px-3.5 sm:px-6 bg-bg/85 backdrop-blur-[10px] border-b border-border transition-colors duration-200">
@@ -58,23 +58,9 @@ export function Header({ activeId = 'home', onSelect }) {
         })}
       </nav>
 
-      {/* Right Controls: Language (EN/VI) -> Season Select (max 92px) -> Theme Switch */}
+      {/* Right Controls: Season Select (max 92px) -> Theme Switch */}
       <div className="flex items-center gap-1.5 sm:gap-2 flex-none">
-        {/* 1. Language Toggle Button (44px touch target) */}
-        <button
-          type="button"
-          onClick={toggleLang}
-          aria-label={lang === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
-          title={lang === 'vi' ? 'Switch to English' : 'Chuyển sang Tiếng Việt'}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center text-xs font-bold text-muted hover:text-accent border border-border bg-surface2 rounded-xl px-2.5 py-1.5 transition-colors focus:outline-none focus:ring-1 focus:ring-accent"
-        >
-          <span className="flex items-center gap-1 tracking-wider uppercase">
-            <Globe className="w-3.5 h-3.5 text-accent" />
-            <span>{t.nextLangCode}</span>
-          </span>
-        </button>
-
-        {/* 2. Season Selector Dropdown (max-w ~92px) */}
+        {/* 1. Season Selector Dropdown (max-w ~92px) */}
         {allowVisitorSwitch ? (
           <div className="relative max-w-[86px] sm:max-w-[92px] w-full">
             <select

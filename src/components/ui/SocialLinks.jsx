@@ -38,7 +38,7 @@ export function SocialLinks({ className = '', centered = false, size = 'auto' })
       isExternal: true,
     },
     {
-      name: 'Địa chỉ',
+      name: 'Google Maps',
       icon: MapPin,
       url: profile.mapLink,
       isExternal: true,
