@@ -28,7 +28,7 @@ export const translations = {
       heroText:
         'Passionate about technology, building practical products, and continuously learning to become an outstanding developer creating real-world value.',
       viewProjects: 'View Projects',
-      downloadCv: 'Download CV',
+      contactBtn: 'Contact Me',
       studentYear: 'IT Student - 4th Year',
     },
     about: {
@@ -76,7 +76,7 @@ export const translations = {
       ariaLabel: 'Seasonal Effect',
     },
     footer: {
-      copyright: '© 2026 Dang Binh Duong. All rights reserved.',
+      copyright: 'Dang Binh Duong',
     },
   },
 };

@@ -29,7 +29,9 @@ export function ContactSection() {
         <div className="space-y-2 mb-4">
           {/* Email */}
           <a
-            href={`mailto:${profile.email}`}
+            href={profile.emailComposeLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ct flex items-center gap-3 p-2 -mx-2 min-h-[48px] rounded-xl text-[13px] hover:bg-surface2/60 group transition-colors"
           >
             <div className="w-9 h-9 rounded-[10px] bg-surface2 border border-border flex items-center justify-center text-accent group-hover:border-accent flex-none transition-colors">
@@ -94,7 +96,9 @@ export function ContactSection() {
 
       {/* Send Message Button: full-width, min-h 48px, gradient */}
       <a
-        href={`mailto:${profile.email}`}
+        href={profile.emailComposeLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className="send w-full min-h-[48px] flex items-center justify-center gap-2 p-3 mt-4 rounded-xl font-semibold text-[14px] text-white bg-gradient-to-r from-accent to-accent2 shadow-glow hover:opacity-95 hover:-translate-y-0.5 transition-all"
       >
         <span>{t.contact?.sendMessage || profile.sendMessage}</span>

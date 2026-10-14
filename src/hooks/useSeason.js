@@ -59,11 +59,21 @@ export function useSeason() {
   const setSeasonChoice = useCallback((choice) => {
     setVisitorChoiceState(choice);
     try {
-      if (typeof window !== 'undefined' && seasonConfig.allowVisitorSwitch) {
+      if (typeof window !== 'undefined') {
         localStorage.setItem('visitor_season', choice);
+        const url = new URL(window.location.href);
+        if (url.searchParams.has('season')) {
+          url.searchParams.delete('season');
+          window.location.href = url.toString();
+          return;
+        }
+        window.location.reload();
       }
     } catch (e) {
       console.warn('Could not save visitor season to localStorage:', e);
+      if (typeof window !== 'undefined') {
+        window.location.reload();
+      }
     }
   }, []);
 

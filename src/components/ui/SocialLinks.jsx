@@ -28,8 +28,8 @@ export function SocialLinks({ className = '', centered = false, size = 'auto' })
     {
       name: 'Email',
       icon: SiGmail,
-      url: `mailto:${profile.email}`,
-      isExternal: false,
+      url: profile.emailComposeLink,
+      isExternal: true,
     },
     {
       name: 'Zalo',

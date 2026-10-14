@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Folder, Download, MapPin, Code2 } from 'lucide-react';
+import { Folder, Mail, MapPin, Code2 } from 'lucide-react';
 import { SiGmail } from '../ui/BrandIcons';
 import { profile } from '../../data/profile';
 import { useLang } from '../../hooks/useLang';
@@ -95,14 +95,20 @@ export function HeroSection() {
             <span className="truncate">{t.hero?.viewProjects || profile.viewProjects}</span>
           </a>
 
-          {/* Download CV Button */}
+          {/* Contact Button */}
           <a
-            href={profile.cvFile}
-            download="CV-DangBinhDuong.pdf"
-            className="flex-1 min-[900px]:flex-initial max-w-[240px] min-h-[44px] inline-flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl font-semibold text-[13.5px] sm:text-[15px] border-1.5 border-accent text-accent hover:bg-accent/10 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent"
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('contact');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }}
+            className="flex-1 min-[900px]:flex-initial max-w-[240px] min-h-[44px] inline-flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 rounded-xl font-semibold text-[13.5px] sm:text-[15px] border-2 border-accent text-accent hover:bg-accent hover:text-white hover:-translate-y-0.5 shadow-sm hover:shadow-glow transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent"
           >
-            <Download className="w-4 h-4 flex-none" />
-            <span className="truncate">{t.hero?.downloadCv || profile.downloadCv}</span>
+            <Mail className="w-4 h-4 flex-none" />
+            <span className="truncate">{t.hero?.contactBtn || profile.contactBtn || 'Contact Me'}</span>
           </a>
         </div>
 
@@ -116,7 +122,9 @@ export function HeroSection() {
 
           {/* Email */}
           <a
-            href={`mailto:${profile.email}`}
+            href={profile.emailComposeLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 hover:text-accent transition-colors min-h-[28px]"
           >
             <SiGmail className="w-3.5 h-3.5 text-accent flex-none" />

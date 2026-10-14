@@ -1,8 +1,8 @@
 import React from 'react';
 import { Home, User, Layers, Folder, FileText, Mail } from 'lucide-react';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { SeasonMenu } from '../ui/SeasonMenu';
 import { profile } from '../../data/profile';
-import { useSeason } from '../../hooks/useSeason';
 import { useLang } from '../../hooks/useLang';
 
 const NAV_ICONS = {
@@ -15,7 +15,6 @@ const NAV_ICONS = {
 };
 
 export function Header({ activeId = 'home', onSelect }) {
-  const { visitorChoice, setSeasonChoice, allowVisitorSwitch } = useSeason();
   const { t } = useLang();
 
   return (
@@ -58,28 +57,12 @@ export function Header({ activeId = 'home', onSelect }) {
         })}
       </nav>
 
-      {/* Right Controls: Season Select (max 92px) -> Theme Switch */}
+      {/* Right Controls: Season Menu -> Theme Switch */}
       <div className="flex items-center gap-1.5 sm:gap-2 flex-none">
-        {/* 1. Season Selector Dropdown (max-w ~92px) */}
-        {allowVisitorSwitch ? (
-          <div className="relative max-w-[86px] sm:max-w-[92px] w-full">
-            <select
-              value={visitorChoice}
-              onChange={(e) => setSeasonChoice(e.target.value)}
-              aria-label={t.seasons.ariaLabel}
-              className="w-full h-9 text-xs bg-surface2 text-muted hover:text-accent border border-border rounded-xl px-2 py-1 focus:outline-none focus:ring-1 focus:ring-accent cursor-pointer truncate transition-colors appearance-none text-center"
-            >
-              <option value="auto">{t.seasons.auto}</option>
-              <option value="spring">{t.seasons.spring}</option>
-              <option value="summer">{t.seasons.summer}</option>
-              <option value="autumn">{t.seasons.autumn}</option>
-              <option value="winter">{t.seasons.winter}</option>
-              <option value="none">{t.seasons.none}</option>
-            </select>
-          </div>
-        ) : null}
+        {/* 1. Season Effect Selector */}
+        <SeasonMenu />
 
-        {/* 3. Dark/Light Theme Switch */}
+        {/* 2. Dark/Light Theme Switch */}
         <ThemeToggle />
       </div>
     </header>

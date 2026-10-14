@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Đặng Bình Dương",
+  name: "Dang Binh Duong",
   greeting: "Hello, I'm",
   role: "4th-year Student | Information Technology",
   heroText: "Passionate about technology, building practical products, and continuously learning to become an outstanding developer creating real-world value.",
@@ -8,6 +8,7 @@ export const profile = {
   location: "Ba Vi, Hanoi, Vietnam",
   address: "Village 8, Suoi 2, Ba Vi, Hanoi, Vietnam",
   email: "dangbinhduong.work@gmail.com",
+  emailComposeLink: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=dangbinhduong.work@gmail.com",
   zalo: "0865087784",
   github: "https://github.com/dangbinhduongwork-ai",
   linkedin: "https://www.linkedin.com/in/duong-dang-binh-4997a2443",
@@ -25,14 +26,6 @@ export const profile = {
   },
   projects: [
     {
-      title: "Realtime Language Translation",
-      icon: "Globe",
-      gradient: ["#0b1e3f", "#1e5fd8"],
-      tags: ["Python", "RapidOCR", "PySide6"],
-      desc: "Windows desktop application for real-time English-to-Vietnamese on-screen OCR translation displayed seamlessly via a transparent overlay.",
-      url: "https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation"
-    },
-    {
       title: "Grocery Shop (Nguyen Huong)",
       icon: "ShoppingCart",
       gradient: ["#0f3d2a", "#22c55e"],
@@ -40,6 +33,14 @@ export const profile = {
       desc: "Full-stack e-commerce platform (React Web + Flutter App + Spring Boot) for grocery & confectionery retail with cart, checkout, JWT authentication, and a 7-module admin suite.",
       url: "https://github.com/dangbinhduongwork-ai/candy-shop",
       demoUrl: "https://nguyenhuongshop.vercel.app"
+    },
+    {
+      title: "Realtime Language Translation",
+      icon: "Globe",
+      gradient: ["#0b1e3f", "#1e5fd8"],
+      tags: ["Python", "RapidOCR", "PySide6"],
+      desc: "Windows desktop application for real-time English-to-Vietnamese on-screen OCR translation displayed seamlessly via a transparent overlay.",
+      url: "https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation"
     },
     {
       title: "CaloOut (Flutter App)",
@@ -72,7 +73,7 @@ export const profile = {
     { id: "contact", label: "Contact", icon: "Mail" }
   ],
   viewProjects: "View Projects",
-  downloadCv: "Download CV",
+  contactBtn: "Contact Me",
   cvFile: "/cv.pdf",
   studentYear: "IT Student - 4th Year",
   learnMore: "More about me",
@@ -92,7 +93,7 @@ export const profile = {
   emailLabel: "Email",
   zaloLabel: "Zalo",
   addressLabel: "Address",
-  copyright: "© 2026 Dang Binh Duong. All rights reserved."
+  copyright: "Dang Binh Duong"
 };
 
 export default profile;

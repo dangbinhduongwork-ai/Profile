@@ -1,4 +1,4 @@
-# Đặng Bình Dương – Portfolio Cá Nhân
+# Dang Binh Duong – Developer Portfolio
 
 Website portfolio cá nhân xây dựng bằng **React 18 + Vite + Tailwind CSS 3**, thiết kế hiện đại với chủ đề Dark / Light mode, bố cục chuẩn responsive và hiệu ứng mượt mà.
 
@@ -91,8 +91,8 @@ Sau đó đặt `mode: "stars"` là hiệu ứng mới sẽ tự động hoạt 
 
 ## Featured Projects
 
-- [Realtime Language Translation](https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation) – Real-time on-screen OCR translation desktop app (Python, RapidOCR, PySide6)
 - [Grocery Shop (Nguyen Huong Store)](https://github.com/dangbinhduongwork-ai/candy-shop) – Cross-platform e-commerce platform (React Web + Flutter App + Spring Boot + MySQL) ([Live Demo](https://nguyenhuongshop.vercel.app))
+- [Realtime Language Translation](https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation) – Real-time on-screen OCR translation desktop app (Python, RapidOCR, PySide6)
 - [CaloOut (Flutter App)](https://github.com/dangbinhduongwork-ai/CaloOutV2) – Mobile calorie & wellness tracking app (Flutter, Dart, Firebase)
 - [CaloIn](https://github.com/dangbinhduongwork-ai/CaloIn) – Offline-first calorie & nutrient intake logging app (Flutter, Dart, SQLite)
 
@@ -120,4 +120,5 @@ npm run build
 ```
 
 ---
-© 2026 Đặng Bình Dương. All rights reserved.
+Dang Binh Duong
+

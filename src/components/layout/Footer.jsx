@@ -13,7 +13,7 @@ export function Footer() {
         <SocialLinks centered size="44" />
       </div>
 
-      <p>{t.footer?.copyright || profile.copyright}</p>
+      <p className="text-[13px] font-medium text-muted tracking-wide">{profile.name}</p>
     </footer>
   );
 }
