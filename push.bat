@@ -9,7 +9,7 @@ if not exist .git (
 )
 
 git add .
-git commit -m "update 6"
+git commit -m "update 7"
 git remote remove origin 2>nul
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main
