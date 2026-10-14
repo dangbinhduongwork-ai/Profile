@@ -9,7 +9,7 @@ if not exist .git (
 )
 
 git add .
-git commit -m "feat: overhaul mobile-first experience with sticky compact header, bottom tab bar, and responsive touch layout"
+git commit -m "update 1"
 git remote remove origin 2>nul
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main
