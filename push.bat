@@ -9,7 +9,7 @@ if not exist .git (
 )
 
 git add .
-git commit -m "update: stage 8 - redesign blog section with full-height grid and i18n data"
+git commit -m "update: set profile avatar image"
 git remote remove origin 2>nul
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main

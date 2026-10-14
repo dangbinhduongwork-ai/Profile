@@ -14,7 +14,8 @@ const resolvedAvatar =
   avatarModules['/src/assets/avatar.jpg'] ||
   avatarModules['/src/assets/avatar.jpeg'] ||
   avatarModules['/src/assets/avatar.png'] ||
-  null;
+  profile.avatar ||
+  '/avatar.jpg';
 
 export function HeroSection() {
   const [imgError, setImgError] = useState(false);
@@ -42,7 +43,7 @@ export function HeroSection() {
               width={300}
               height={300}
               onError={() => setImgError(true)}
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover object-[center_18%] rounded-full select-none"
             />
           ) : (
             <span className="font-extrabold text-[54px] min-[900px]:text-[88px] text-white select-none leading-none">

@@ -1,5 +1,6 @@
 export const profile = {
   name: "Dang Binh Duong",
+  avatar: "/avatar.jpg",
   greeting: "Hello, I'm",
   role: "4th-year Student | Information Technology",
   heroText: "Passionate about technology, building practical products, and continuously learning to become an outstanding developer creating real-world value.",
