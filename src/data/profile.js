@@ -35,6 +35,15 @@ export const profile = {
       demoUrl: "https://nguyenhuongshop.vercel.app"
     },
     {
+      title: "Duck Pond (Ao Vit 3D)",
+      icon: "Waves",
+      gradient: ["#0e3a40", "#06b6d4"],
+      tags: ["Three.js", "WebGL", "JavaScript", "PWA"],
+      desc: "Interactive 3D relaxation pond viewed from an underwater perspective, featuring Three.js physics water ripples, swimming ducks, ASMR audio, and Zen mode.",
+      url: "https://github.com/dangbinhduongwork-ai/duck-duck-test-main",
+      demoUrl: "https://ducktherapy.vercel.app/"
+    },
+    {
       title: "Realtime Language Translation",
       icon: "Globe",
       gradient: ["#0b1e3f", "#1e5fd8"],

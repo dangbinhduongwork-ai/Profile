@@ -92,6 +92,7 @@ Sau đó đặt `mode: "stars"` là hiệu ứng mới sẽ tự động hoạt 
 ## Featured Projects
 
 - [Grocery Shop (Nguyen Huong Store)](https://github.com/dangbinhduongwork-ai/candy-shop) – Cross-platform e-commerce platform (React Web + Flutter App + Spring Boot + MySQL) ([Live Demo](https://nguyenhuongshop.vercel.app))
+- [Duck Pond (Ao Vit 3D)](https://github.com/dangbinhduongwork-ai/duck-duck-test-main) – Interactive 3D relaxation pond from an underwater perspective (Three.js, WebGL, ASMR Audio, PWA) ([Live Demo](https://ducktherapy.vercel.app/))
 - [Realtime Language Translation](https://github.com/dangbinhduongwork-ai/realtimelanguagetranslation) – Real-time on-screen OCR translation desktop app (Python, RapidOCR, PySide6)
 - [CaloOut (Flutter App)](https://github.com/dangbinhduongwork-ai/CaloOutV2) – Mobile calorie & wellness tracking app (Flutter, Dart, Firebase)
 - [CaloIn](https://github.com/dangbinhduongwork-ai/CaloIn) – Offline-first calorie & nutrient intake logging app (Flutter, Dart, SQLite)

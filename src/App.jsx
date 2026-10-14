@@ -11,7 +11,7 @@ import {
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { SeasonEffect } from './components/ui/SeasonEffect';
 
-const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'contact', 'blog'];
+const SECTION_IDS = ['home', 'about', 'skills', 'projects', 'blog', 'contact'];
 
 export function App() {
   // Track active section for Header, Sidebar, and Bottom Tab Bar
@@ -43,14 +43,14 @@ export function App() {
               <SkillsSection />
             </div>
 
-            {/* Row 2: Projects (#projects) & Contact (#contact) - 2.6fr / 1fr */}
-            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[2.6fr_1fr] gap-3.5 sm:gap-5">
-              <ProjectsSection />
+            {/* Row 2: Projects (#projects) - Full-width horizontal showcase */}
+            <ProjectsSection />
+
+            {/* Row 3: Blog (#blog) & Contact (#contact) */}
+            <div className="grid grid-cols-1 min-[1100px]:grid-cols-[1.5fr_1fr] gap-3.5 sm:gap-5">
+              <BlogSection />
               <ContactSection />
             </div>
-
-            {/* Row 3: Blog (#blog) */}
-            <BlogSection />
           </div>
 
           {/* Footer (includes mobile social links and tab bar safe area padding) */}

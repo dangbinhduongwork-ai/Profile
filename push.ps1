@@ -8,7 +8,7 @@ if (-not (Test-Path -Path ".git")) {
 }
 
 git add .
-git commit -m "update: auto reload page on season effect selection"
+git commit -m "update: add live demo for Duck Pond project"
 git remote remove origin 2>$null
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main

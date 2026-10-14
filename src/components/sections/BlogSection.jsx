@@ -9,7 +9,7 @@ export function BlogSection() {
   return (
     <section
       id="blog"
-      className="card rounded-[14px] sm:rounded-2xl border border-border bg-surface p-[18px] sm:p-6 mb-3.5 sm:mb-5 transition-colors duration-200"
+      className="card rounded-[14px] sm:rounded-2xl border border-border bg-surface p-[18px] sm:p-6 transition-colors duration-200 flex flex-col justify-between"
     >
       {/* Section Header: 18px on mobile, 20px on desktop */}
       <h2 className="text-[18px] sm:text-[20px] font-bold text-text mb-3.5 sm:mb-4 flex items-center gap-2.5 [text-wrap:balance]">
