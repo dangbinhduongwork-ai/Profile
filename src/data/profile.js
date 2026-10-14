@@ -60,7 +60,7 @@ export const profile = {
   blog: [
     "Bắt đầu với Flutter cho người mới",
     "Spring Boot REST API từ A đến Z",
-    "Hành trình học lập trình năm 3"
+    "Hành trình học lập trình năm 4"
   ],
   nav: [
     { id: "home", label: "Trang chủ", icon: "Home" },
@@ -73,7 +73,7 @@ export const profile = {
   viewProjects: "Xem dự án",
   downloadCv: "Tải CV",
   cvFile: "/cv.pdf",
-  studentYear: "Sinh viên CNTT - Năm 3",
+  studentYear: "Sinh viên CNTT - Năm 4",
   learnMore: "Tìm hiểu thêm về tôi",
   sectionTitles: {
     about: "Giới thiệu",

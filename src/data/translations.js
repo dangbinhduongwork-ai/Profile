@@ -26,17 +26,17 @@ export const translations = {
     ],
     hero: {
       greeting: 'Xin chào, tôi là',
-      role: 'Sinh viên năm 3 | Công nghệ Thông tin',
+      role: 'Sinh viên năm 4 | Công nghệ Thông tin',
       heroText:
         'Đam mê công nghệ, thích xây dựng những sản phẩm hữu ích và không ngừng học hỏi để trở thành một lập trình viên giỏi, tạo ra giá trị thực tế.',
       viewProjects: 'Xem dự án',
       downloadCv: 'Tải CV',
-      studentYear: 'Sinh viên CNTT - Năm 3',
+      studentYear: 'Sinh viên CNTT - Năm 4',
     },
     about: {
       title: 'Giới thiệu',
       paragraphs: [
-        'Mình là Đặng Bình Dương, sinh viên năm 3 ngành Công nghệ Thông tin. Mình yêu thích lập trình, đặc biệt là phát triển web, ứng dụng di động và các công nghệ mới như React, Spring Boot, Flutter...',
+        'Mình là Đặng Bình Dương, sinh viên năm 4 ngành Công nghệ Thông tin. Mình yêu thích lập trình, đặc biệt là phát triển web, ứng dụng di động và các công nghệ mới như React, Spring Boot, Flutter...',
         'Mình luôn cố gắng học hỏi, rèn luyện kỹ năng và xây dựng những dự án thực tế để từng bước tiến gần hơn đến mục tiêu trở thành một lập trình viên chuyên nghiệp và tự do tài chính.',
       ],
       learnMore: 'Tìm hiểu thêm về tôi',
@@ -103,17 +103,17 @@ export const translations = {
     ],
     hero: {
       greeting: "Hello, I'm",
-      role: '3rd-year Student | Information Technology',
+      role: '4th-year Student | Information Technology',
       heroText:
         'Passionate about technology, building practical products, and continuously learning to become an outstanding developer creating real-world value.',
       viewProjects: 'View Projects',
       downloadCv: 'Download CV',
-      studentYear: 'IT Student - 3rd Year',
+      studentYear: 'IT Student - 4th Year',
     },
     about: {
       title: 'About Me',
       paragraphs: [
-        "I'm Dang Binh Duong, a 3rd-year Information Technology student. I love programming, especially web development, mobile apps, and modern technologies like React, Spring Boot, Flutter...",
+        "I'm Dang Binh Duong, a 4th-year Information Technology student. I love programming, especially web development, mobile apps, and modern technologies like React, Spring Boot, Flutter...",
         'I constantly strive to learn, hone my skills, and build real-world projects to step-by-step progress toward becoming a professional software engineer and achieving financial freedom.',
       ],
       learnMore: 'More about me',
