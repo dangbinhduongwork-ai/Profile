@@ -9,7 +9,7 @@ if not exist .git (
 )
 
 git add .
-git commit -m "update: set profile avatar image"
+git commit -m "update: pet mini chibi"
 git remote remove origin 2>nul
 git remote add origin https://github.com/dangbinhduongwork-ai/Profile.git
 git branch -M main
