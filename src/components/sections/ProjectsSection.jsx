@@ -6,6 +6,8 @@ import {
   Activity,
   Heart,
   Waves,
+  Target,
+  Bot,
   ArrowRight,
   ExternalLink,
   ChevronLeft,
@@ -20,10 +22,12 @@ const PROJECT_ICONS = {
   Activity,
   Heart,
   Waves,
+  Target,
+  Bot,
 };
 
 export function ProjectsSection() {
-  const { t } = useLang();
+  const { t, isEn } = useLang();
   const scrollRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -141,9 +145,9 @@ export function ProjectsSection() {
                 {/* Title */}
                 <b
                   className="text-accent text-[14px] sm:text-[14.5px] font-semibold leading-snug line-clamp-1"
-                  title={project.title}
+                  title={!isEn && project.titleVi ? project.titleVi : project.title}
                 >
-                  {project.title}
+                  {!isEn && project.titleVi ? project.titleVi : project.title}
                 </b>
 
                 {/* Tags */}
@@ -160,7 +164,7 @@ export function ProjectsSection() {
 
                 {/* Description */}
                 <p className="text-[12px] sm:text-[12.5px] text-muted flex-1 leading-relaxed line-clamp-3">
-                  {project.desc}
+                  {!isEn && project.descVi ? project.descVi : project.desc}
                 </p>
 
                 {/* Links: GitHub & optional Live Demo */}
