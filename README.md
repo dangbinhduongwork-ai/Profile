@@ -35,7 +35,7 @@ Mở file [`src/App.jsx`](src/App.jsx), tìm đoạn mã gọi component `<Walki
     <WalkingCharacter
       modelUrl="/models/chibi_bald_business_man_walk.glb"
       scale={100}
-      speed={85}
+      speed={42}
       gravity={1800}
       bounce={0.35}
     />
@@ -48,7 +48,7 @@ Mở file [`src/App.jsx`](src/App.jsx), tìm đoạn mã gọi component `<Walki
 | Thuộc tính (Prop) | Kiểu dữ liệu | Giá trị mặc định | Giải thích ý nghĩa |
 | :--- | :--- | :--- | :--- |
 | **`scale`** | `number` | `100` | **Kích cỡ chiều cao của nhân vật** (tính theo pixel màn hình). Ví dụ: `75` (nhỏ gọn), `100` (chuẩn), `130` (lớn hơn). |
-| **`speed`** | `number` | `85` | **Tốc độ di chuyển bước đi** (pixel / giây). Ví dụ: `50` (đi dạo chậm rãi), `85` (vừa phải), `130` (đi nhanh năng động). |
+| **`speed`** | `number` | `42` | **Tốc độ di chuyển bước đi** (pixel / giây). Ví dụ: `42` (bước đi thư thái, tự nhiên như người thật), `80` (bước đi nhanh). |
 | **`modelUrl`** | `string` | `"/models/chibi_..."` | Đường dẫn đến file mô hình 3D định dạng `.glb` trong thư mục `public/`. |
 | **`gravity`** | `number` | `1800` | Gia tốc trọng trường khi bạn nhấc nhân vật lên rồi thả rơi xuống sàn. |
 | **`bounce`** | `number` | `0.35` | Độ đàn hồi nảy lên khi nhân vật chạm sàn (`0` = không nảy, `0.5` = nảy cao). |

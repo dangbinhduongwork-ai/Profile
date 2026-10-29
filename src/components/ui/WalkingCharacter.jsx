@@ -12,8 +12,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
  */
 export function WalkingCharacter({
   modelUrl = '/models/chibi_bald_business_man_walk.glb',
-  scale = 125,
-  speed = 85,
+  scale = 100,
+  speed = 42,
   gravity = 1800,
   bounce = 0.35,
 }) {
@@ -222,7 +222,9 @@ export function WalkingCharacter({
       const dt = Math.min(clock.getDelta(), 0.1);
 
       if (mixer) {
-        const timeScale = state === 'DRAGGING' ? 1.4 : 1.0;
+        // Đồng bộ nhịp bước chân khớp tự nhiên với tốc độ di chuyển (tránh trượt chân)
+        const walkCadence = Math.max(0.4, Math.min(1.2, speed / 55));
+        const timeScale = state === 'DRAGGING' ? 1.4 : walkCadence;
         mixer.update(dt * timeScale);
       }
 

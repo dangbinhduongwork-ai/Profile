@@ -43,7 +43,7 @@ export function App() {
           <WalkingCharacter
             modelUrl="/models/chibi_bald_business_man_walk.glb"
             scale={100}
-            speed={85}
+            speed={42}
           />
         </Suspense>
       )}
